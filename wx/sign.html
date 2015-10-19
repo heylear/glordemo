@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>小轮顾问</title>
+    <!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>-->
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/glor.css">
+    <script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>
+</head>
+
+<body ontouchstart>
+<section class="ui-container">
+    <div class="ui-loading-block hide">
+        <div class="ui-loading-cnt">
+            <i class="ui-loading-bright"></i>
+
+            <p>正在加载中...</p>
+        </div>
+    </div>
+    <section id="sign-step1">
+        <div class="demo-item">
+            <div class="ui-tips ui-tips-info">
+                <i></i><span>注册小轮顾问后，销售顾问可以接受来自小轮顾问客户派单，帮助客户解决购车过程中遇到的各种问题</span>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-avatar-lg" style="margin-left: 40%;margin-bottom: 10px;margin-top:10px">
+                <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+            </div>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                姓名
+            </label>
+            <input type="text" id="realName" placeholder="请输入真实姓名"/>
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                性别
+            </label>
+            <label class="ui-radio" for="sex" style="margin-left:25%">
+                <input type="radio" name="sex" value="1"/>男
+            </label>
+            <label class="ui-radio" for="sex" style="margin-left:5%">
+                <input type="radio" name="sex" value="2"/>女
+            </label>
+            <input type="radio" name="sex" value="0" checked style="display: none;">
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>出生日期</label>
+
+            <div class="ui-select-group">
+                <div class="ui-select">
+                    <select id="year">
+                        <option>2014</option>
+                        <option selected="">2015</option>
+                        <option>2016</option>
+                    </select>
+                </div>
+                <div class="ui-select">
+                    <select id="month">
+                        <option>03</option>
+                        <option selected="">04</option>
+                        <option>05</option>
+                    </select>
+                </div>
+                <div class="ui-select">
+                    <select id="day">
+                        <option>21</option>
+                        <option selected="">22</option>
+                        <option>23</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>所在城市</label>
+
+            <div class="ui-select-group">
+                <div class="ui-select">
+                    <select id="provinceId">
+                        <option value="1" selected>上海市</option>
+                        <option value="2">江苏省</option>
+                        <option value="3">浙江省</option>
+                    </select>
+                </div>
+                <div class="ui-select">
+                    <select id="cityId">
+                        <option value="1" selected>上海市</option>
+                        <option value="2">杭州市</option>
+                        <option value="3">苏州市</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                工作单位
+            </label>
+            <input type="text" id="employer" placeholder="请输入单位名称"/>
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>
+                工作电话
+            </label>
+            <input type="text" id="workPhone" placeholder="请输入电话号码"/>
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>服务品牌</label>
+            <input type="text" id="servedBrandDesc" class="brand-input" placeholder="选择品牌"/>
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
+        <div class="ui-form-item ui-border-b">
+            <label>擅长品牌</label>
+            <input type="text" id="expertBrandDesc" class="brand-input" placeholder="选择品牌(可选多个)"/>
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
+        <div class="ui-form-item ui-border-b" style="height:120px">
+            <label>
+                自我介绍
+            </label>
+            <textarea id="description" placeholder="不少于100字..." rows="5" style="margin-top:15px"></textarea>
+        </div>
+        <div class="ui-btn-wrap">
+            <button class="ui-btn-lg ui-btn-glor">
+                下一步
+            </button>
+        </div>
+    </section>
+    <section id="search-brand" style="display: none">
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-searchbar-wrap ui-border-b">
+                    <div class="ui-searchbar ui-border-radius">
+                        <i class="ui-icon-search"></i>
+
+                        <div class="ui-searchbar-text">搜索号码（首字母）</div>
+                        <div class="ui-searchbar-input"><input value="" type="tel" placeholder="搜索号码（首字母）"
+                                                               autocapitalize="off"></div>
+                        <i class="ui-icon-close"></i>
+                    </div>
+                    <button class="ui-searchbar-cancel">取消</button>
+                </div>
+                <!-- <script src="http://i.gtimg.cn/vipstyle/frozenjs/1.0.1/frozen.js?_bid=304"></script> -->
+                <script src="js/frozen.js"></script>
+                <script type="text/javascript">
+                    $('.ui-searchbar').tap(function () {
+                        $('.ui-searchbar-wrap').addClass('focus');
+                        $('.ui-searchbar-input input').focus();
+                    });
+                    $('.ui-searchbar-cancel').tap(function () {
+                        $('.ui-searchbar-wrap').removeClass('focus');
+                    });
+                </script>
+            </div>
+            <div class="demo-block">
+                <ul class="ui-list ui-list-pure ui-border-tb ui-list-mg">
+                    <li class="ui-border-t">
+                        <h4>宝马</h4>
+                    </li>
+                    <li class="ui-border-t">
+                        <h4>奔驰</h4>
+                    </li>
+                    <li class="ui-border-t">
+                        <h4>保时捷</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="sign-step2" style="display: none">
+        <div class="demo-item">
+            <div class="ui-tips ui-tips-info">
+                <i></i><span>请填写验证审核信息</span>
+            </div>
+        </div>
+        <div class="ui-form-item ui-form-item-l ui-border-b">
+            <label class="ui-border-r">
+                中国 +86
+            </label>
+            <input type="text" id="cellphoneNumber" placeholder="请输入手机号码"/>
+            <a href="#" class="ui-icon-close">
+            </a>
+        </div>
+        <div class="ui-form-item ui-form-item-r ui-border-b">
+            <input type="text" placeholder="请输入验证码">
+            <!-- 若按钮不可点击则添加 disabled 类 -->
+            <button type="button" class="ui-border-l">重新发送</button>
+            <a href="#" class="ui-icon-close"></a>
+        </div>
+        <div class="ui-form-item ui-form-item-pure ui-border-b">
+            <input type="password" id="password" placeholder="设置密码">
+            <a href="#" class="ui-icon-close"></a>
+        </div>
+        <div class="ui-form-item ui-form-item-pure ui-border-b">
+            <input type="password" placeholder="验证密码">
+            <a href="#" class="ui-icon-close"></a>
+        </div>
+        <div class="ui-btn-wrap">
+            <button class="ui-btn-lg ui-btn-glor">
+                完成
+            </button>
+        </div>
+    </section>
+    <section id="sign-tips" style="display: none">
+        <div class="demo-block">
+            <div class="ui-tips ui-tips-success">
+                <i></i><span>感谢注册小轮顾问，在审核完成后即可登录使用，接受客户派单联系</span>
+            </div>
+        </div>
+        <div class="ui-btn-wrap">
+            <button class="ui-btn-lg ui-btn-glor">
+                返回微信
+            </button>
+        </div>
+    </section>
+</section>
+<script type="text/javascript">
+    $("#sign-step1 button").on('click', function () {
+        $(".ui-loading-block").removeClass('hide').addClass('show');
+        $.post("/wx/seller-register-first", {
+            'seller.realName': $("#realName").val(),
+            'seller.sex': $("input[name='sex']:checked").val(),
+            'seller.birthdayFromStr': $("#year").val() + "-" + $("#month").val() + "-" + $("#day").val(),
+            'seller.city.cityId': $("#cityId").val(),
+            'seller.employer': $("#employer").val(),
+            'seller.workPhone': $("#workPhone").val(),
+            'seller.servedBrandDesc': $("#servedBrandDesc").val(),
+            'seller.expertBrandDesc': $("#expertBrandDesc").val(),
+            'seller.description': $("#description").val()
+        }, function (res) {
+            $(".ui-loading-block").removeClass('show').addClass('hide');
+            if (res.code === 0) {
+                $("#sign-step1").hide();
+                $("#sign-step2").show();
+            } else {
+                alert(res.message);
+            }
+        });
+    });
+
+    $("#sign-step1 .brand-input").on('focus', function () {
+        $(".ui-loading-block").removeClass('hide').addClass('show');
+        setTimeout(function () {
+            $(".ui-loading-block").removeClass('show').addClass('hide');
+            $("#sign-step1").hide();
+            $("#search-brand").show();
+        }, 500)
+    });
+
+    $("#sign-step2 button").on('click', function () {
+        $(".ui-loading-block").removeClass('hide').addClass('show');
+        $.post("/wx/seller-register", {
+            'seller.cellphoneNumber': $("#cellphoneNumber").val(),
+            'seller.password': $("#password").val()
+        }, function (res) {
+            $(".ui-loading-block").removeClass('show').addClass('hide');
+            if (res.code === 0) {
+                $("#sign-step2").hide();
+                $("#sign-tips").show();
+            } else {
+                alert(res.message);
+            }
+        });
+    });
+</script>
+</body>
+</html>

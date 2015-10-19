@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>小轮顾问</title>
+    <!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>-->
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/glor.css">
+    <script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>
+</head>
+
+<body ontouchstart>
+<div class="ui-dialog" id="loot-dialog">
+    <div class="ui-dialog-cnt">
+        <header class="ui-dialog-hd ui-border-b">
+            <h3>系统提示</h3>
+            <i class="ui-dialog-close" data-role="button"></i>
+        </header>
+        <div class="ui-dialog-bd" style="text-align: center">
+            <div>抢单成功</div>
+        </div>
+    </div>
+</div>
+<div class="ui-dialog" id="add-dialog">
+    <div class="ui-dialog-cnt">
+        <header class="ui-dialog-hd ui-border-b">
+            <h3>系统提示</h3>
+            <i class="ui-dialog-close" data-role="button"></i>
+        </header>
+        <div class="ui-dialog-bd" style="text-align: center">
+            <div>添加好友成功</div>
+        </div>
+    </div>
+</div>
+<section class="ui-container">
+    <section id="cust-detail" style="display: none">
+        <div class="ui-border-b">
+            <ul class="ui-list" style="margin-top: 20px;margin-left: 5%">
+                <li>
+                    <div class="ui-avatar">
+                        <span style="background-image:url(img/u34.jpg)"></span>
+                    </div>
+                    <div class="ui-whitespace"></div>
+                    <div class="ui-list-info ui-border-t">
+                        <p class="ui-nowrap">姓名: 蔡先生</p>
+
+                        <p class="ui-nowrap" style="margin-top: 10px;">所在城市: 上海</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ui-border-b">
+            <ul class="ui-list ui-list-text ui-border-tb">
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-nowrap">联系方式</h4>
+
+                    <div class="ui-txt-info">13817992076</div>
+                    <div class="ui-whitespace"></div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-nowrap">咨询品牌</h4>
+
+                    <div class="ui-txt-info">兰博基尼、玛莎拉蒂</div>
+                    <div class="ui-whitespace"></div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-nowrap">特殊要求</h4>
+
+                    <div class="ui-whitespace"></div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-txt-info">要求太多了，要求太多了，要求太多了，要求太多了，要求太多了，要求太多了，要求太多了，要求太多了</h4>
+
+                    <div class="ui-whitespace"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="ui-btn-wrap">
+            <button class="ui-btn-lg ui-btn-glor" id="add-friend">
+                加为好友
+            </button>
+        </div>
+        <div class="ui-placehold-wrap"></div>
+        <div class="ui-placehold-wrap"></div>
+        <div class="ui-placehold-wrap"></div>
+    </section>
+    <section id="loop-detail" style="display: none">
+        <div class="ui-border-b">
+            <ul class="ui-list" style="margin-top: 20px;margin-left: 5%">
+                <li>
+                    <div class="ui-avatar">
+                        <span style="background-image:url(img/u34.jpg)"></span>
+                    </div>
+                    <div class="ui-whitespace"></div>
+                    <div class="ui-list-info ui-border-t">
+                        <p class="ui-nowrap">姓名: 蔡先生</p>
+
+                        <p class="ui-nowrap" style="margin-top: 10px;">所在城市: 上海</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ui-border-b">
+            <ul class="ui-list ui-list-text ui-border-tb">
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-nowrap">咨询品牌</h4>
+
+                    <div class="ui-txt-info">兰博基尼、玛莎拉蒂</div>
+                    <div class="ui-whitespace"></div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-nowrap">特殊要求</h4>
+
+                    <div class="ui-whitespace"></div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-whitespace"></div>
+                    <h4 class="ui-txt-info">要求太多了，要求太多了，要求太多了，要求太多了，要求太多了，要求太多了，要求太多了，要求太多了</h4>
+
+                    <div class="ui-whitespace"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="ui-btn-wrap">
+            <button class="ui-btn-lg ui-btn-glor">
+                抢单
+            </button>
+        </div>
+        <div class="ui-placehold-wrap"></div>
+        <div class="ui-placehold-wrap"></div>
+        <div class="ui-placehold-wrap"></div>
+    </section>
+    <section id="list-section">
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-tab">
+                    <ul class="ui-tab-nav ui-border-b">
+                        <li class="current">派单列表</li>
+                        <li>客户管理</li>
+                    </ul>
+                    <ul class="ui-tab-content" style="width:300%">
+                        <li id="loop-list">
+                            <ul class="ui-list ui-border-tb" style="margin-top: 20px">
+                                <li class="ui-border-b">
+                                    <div class="ui-avatar">
+                                        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+                                    </div>
+                                    <div class="ui-list-info ui-border-t">
+                                        <p class="ui-nowrap">姓名: 蔡先生</p>
+
+                                        <p class="ui-nowrap">品牌: 宝马、悍马</p>
+                                    </div>
+                                    <div class="ui-list-action">
+                                        <button class="ui-btn-s ui-btn-glor"
+                                                style="margin-top: 41%;margin-right: 10px;">
+                                            抢单
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="ui-list ui-border-tb" style="margin-top: 20px">
+                                <li class="ui-border-b">
+                                    <div class="ui-avatar">
+                                        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+                                    </div>
+                                    <div class="ui-list-info ui-border-t">
+                                        <p class="ui-nowrap">姓名: 刘先生</p>
+
+                                        <p class="ui-nowrap">品牌: 奔驰、法拉利</p>
+                                    </div>
+                                    <div class="ui-list-action">
+                                        <button class="ui-btn-s ui-btn-glor"
+                                                style="margin-top: 41%;margin-right: 10px;">
+                                            抢单
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="ui-list ui-border-tb" style="margin-top: 20px">
+                                <li class="ui-border-b">
+                                    <div class="ui-avatar">
+                                        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+                                    </div>
+                                    <div class="ui-list-info ui-border-t">
+                                        <p class="ui-nowrap">姓名: 李先生</p>
+
+                                        <p class="ui-nowrap">品牌: 奔驰</p>
+                                    </div>
+                                    <div class="ui-list-action">
+                                        <button class="ui-btn-s ui-btn-glor"
+                                                style="margin-top: 41%;margin-right: 10px;">
+                                            抢单
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="cust-list">
+                            <ul class="ui-list ui-border-tb" style="margin-top: 20px">
+                                <li class="ui-border-b">
+                                    <div class="ui-avatar">
+                                        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+                                    </div>
+                                    <div class="ui-list-info ui-border-t">
+                                        <p class="ui-nowrap" style="display: inline"><span class="ui-whitespace-right">姓名: 蔡先生</span><span
+                                                class="ui-whitespace-left">联系电话: 13817992069</span></p>
+
+                                        <p class="ui-nowrap">咨询品牌: 宝马</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="ui-list ui-border-tb" style="margin-top: 20px">
+                                <li class="ui-border-b">
+                                    <div class="ui-avatar">
+                                        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+                                    </div>
+                                    <div class="ui-list-info ui-border-t">
+                                        <p class="ui-nowrap" style="display: inline"><span class="ui-whitespace-right">姓名: 李先生</span><span
+                                                class="ui-whitespace-left">联系电话: 13902338764</span></p>
+
+                                        <p class="ui-nowrap">咨询品牌: 悍马、兰博基尼</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <script class="demo-script">
+                (function () {
+                    var tab = new fz.Scroll('.ui-tab', {
+                        role: 'tab'
+                    });
+
+                    $("button").not("#add-friend").on('click', function () {
+                        $("#loot-dialog").dialog("show");
+                    });
+
+                    $("#add-friend").on('click', function () {
+                        $("#add-dialog").dialog("show");
+                    });
+                    $("#cust-list ul .ui-list-info").on('click', function () {
+                        $("#cust-detail").show().siblings().hide();
+                    });
+                    $("#loop-list ul .ui-list-info").on('click', function () {
+                        $("#loop-detail").show().siblings().hide();
+                    });
+                })();
+            </script>
+        </div>
+    </section>
+</section>
+<script type="text/javascript">
+    $(location.hash).show().siblings().hide();
+</script>
+</body>
+</html>
